@@ -212,8 +212,8 @@ body {
     top: 18%;
   }
   body {
-    -webkit-backdrop-filter: blur(1.5rem);
     backdrop-filter: blur(1.5rem);
+    -webkit-backdrop-filter: blur(1.5rem);
   }
   #wrapper {
     height: unset;
