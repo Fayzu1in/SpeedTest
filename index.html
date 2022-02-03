@@ -22,7 +22,7 @@
               <div class="progress"></div>
             </div> -->
 
-            <p class="speed-text">...</p>
+            <p id="speed-text">text</p>
             <div class="ring">
               <span class="span"></span>
             </div>
@@ -60,6 +60,7 @@
 
     <script>
       let download;
+      const speedText = document.getElementById("speed-text");
 
       function copyText(elementId) {
         let aux = document.createElement("input");
@@ -99,7 +100,6 @@
       const size = 178000000 * 8;
       const TEST_COUNT = 1000;
       const progress = document.querySelector(".progress");
-      const speedText = document.querySelector(".speed-text");
 
       let test_results = [];
 
@@ -118,9 +118,9 @@
             resolve(endTime - startTime);
           };
 
-          download.onerror = function (err) {
-            reject(err);
-          };
+          // download.onerror = function (err) {
+          //   reject(err);
+          // };
         });
       }
 
@@ -157,6 +157,7 @@
           console.log(e);
           document.querySelector(".ring").style.display = "none";
           speedText.style.transform = "scale(2)";
+          alert("Error");
         }
       });
 
