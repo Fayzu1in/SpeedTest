@@ -141,7 +141,7 @@
       }
 
       checkBtn.addEventListener("click", async function () {
-        setTimeout(stop, 10000);
+        // setTimeout(stop, 10000);
         try {
           for (let i = 0; i < TEST_COUNT; i++) {
             let speed = await getLoadSpeed();
@@ -173,14 +173,14 @@
       //   }, 3000);
       // });
 
-      function stop() {
-        console.log(download);
-        // let tmp = download.get(0);
-        download.pause();
-        download.src = "";
-        download.load();
-        download.remove();
-      }
+      // function stop() {
+      //   console.log(download);
+      //   // let tmp = download.get(0);
+      //   download.pause();
+      //   download.src = "";
+      //   download.load();
+      //   download.remove();
+      // }
 
       // document.getElementById("stopBtn").addEventListener("click", stop);
     </script>
