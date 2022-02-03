@@ -22,7 +22,7 @@
               <div class="progress"></div>
             </div> -->
 
-            <p id="speed-text">text</p>
+            <p id="speed-text">blyat rabotay</p>
             <div class="ring">
               <span class="span"></span>
             </div>
@@ -142,23 +142,23 @@
 
       checkBtn.addEventListener("click", async function () {
         // setTimeout(stop, 10000);
-        // try {
-        for (let i = 0; i < TEST_COUNT; i++) {
-          let speed = await getLoadSpeed();
-          test_results.push(speed);
-          // progress.style.width = ((i + 1) / TEST_COUNT) * 100 + "%";
+        try {
+          for (let i = 0; i < TEST_COUNT; i++) {
+            let speed = await getLoadSpeed();
+            test_results.push(speed);
+            // progress.style.width = ((i + 1) / TEST_COUNT) * 100 + "%";
 
-          speedText.innerText = getAvgSpeed().toFixed(2) + "Mb";
+            speedText.innerText = getAvgSpeed().toFixed(2) + "Mb";
+          }
+
+          document.querySelector(".ring").style.display = "none";
+          speedText.style.transform = "scale(2)";
+        } catch (e) {
+          console.log(e);
+          document.querySelector(".ring").style.display = "none";
+          speedText.style.transform = "scale(2)";
+          alert("Error");
         }
-
-        document.querySelector(".ring").style.display = "none";
-        speedText.style.transform = "scale(2)";
-        // } catch (e) {
-        //   console.log(e);
-        //   document.querySelector(".ring").style.display = "none";
-        //   speedText.style.transform = "scale(2)";
-        //   alert("Error");
-        // }
       });
 
       checkBtn.addEventListener("click", function () {
