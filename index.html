@@ -9,6 +9,9 @@
   </head>
   <body>
     <div id="wrapper">
+      <div id="alertBox">
+        <p id="alertBox__text">IP copied</p>
+      </div>
       <div id="mainDiv">
         <!-- <div id="iframeDiv">
           <iframe id="iframe" src="//openspeedtest.com/Get-widget.php"></iframe>
@@ -22,7 +25,7 @@
               <div class="progress"></div>
             </div> -->
 
-            <p id="speed-text">blyat rabotay</p>
+            <p id="speed-text">...</p>
             <div class="ring">
               <span class="span"></span>
             </div>
@@ -69,6 +72,10 @@
         aux.select();
         document.execCommand("copy");
         document.body.removeChild(aux);
+        document.getElementById("alertBox").style.opacity = "1";
+        setTimeout(function () {
+          document.getElementById("alertBox").style.opacity = "0";
+        }, 2000);
       }
 
       let request;
@@ -97,7 +104,7 @@
       request.send();
 
       const button = document.querySelector("button");
-      const size = 178000000 * 8;
+      const size = 18000000 * 8;
       const TEST_COUNT = 1000;
       const progress = document.querySelector(".progress");
 
@@ -108,7 +115,7 @@
           //   let image = new Image();
           download = document.createElement("video");
           download.src =
-            "https://st9.allmovies.uz/t/e/1/e1hw7vx4sa3qheqg22kvhae3.mp4";
+            "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4";
           // parseInt(Math.random() * 10000);
           //   image.src = "./test.gif?" + parseInt(Math.random() * 10000);
           let startTime = Date.now();
@@ -118,9 +125,9 @@
             resolve(endTime - startTime);
           };
 
-          // download.onerror = function (err) {
-          //   reject(err);
-          // };
+          download.onerror = function (err) {
+            reject(err);
+          };
         });
       }
 
