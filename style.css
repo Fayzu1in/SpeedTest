@@ -26,6 +26,7 @@ body {
   backdrop-filter: blur(1.5rem);
   border-left: 0.5rem solid #2fb14b;
   transition: all 0.5s;
+  z-index: 1;
 }
 
 #alertBox__text {
