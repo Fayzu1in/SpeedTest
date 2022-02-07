@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="height: 100%" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,26 +13,18 @@
         <p id="alertBox__text">IP copied</p>
       </div>
       <div id="mainDiv">
-        <!-- <div id="iframeDiv">
-          <iframe id="iframe" src="//openspeedtest.com/Get-widget.php"></iframe>
-        </div> -->
         <div id="upperDiv">
           <a href="https://allplay.uz/">
             <img id="logoImg" src="./allplayLogoWhite.png" alt=""
           /></a>
           <div class="speedChecker">
-            <!-- <div class="progress-bar">
-              <div class="progress"></div>
-            </div> -->
-
-            <p id="speed-text">...</p>
+            <p id="speed-text">test</p>
             <div class="ring">
               <span class="span"></span>
             </div>
             <button id="checkBtn">Check Internet Speed</button>
           </div>
         </div>
-        <!-- <button id="stopBtn">Stop</button> -->
 
         <div id="downDiv">
           <div class="listView">
@@ -103,23 +95,22 @@
       };
       request.send();
 
-      const button = document.querySelector("button");
-      const size = 18000000 * 8;
+      const size = 186646528 * 8;
       const TEST_COUNT = 1000;
-      const progress = document.querySelector(".progress");
-
       let test_results = [];
 
       function loadVideo() {
         return new Promise((resolve, reject) => {
-          //   let image = new Image();
           download = document.createElement("video");
+          download.muted = true;
+          download.controls = true;
+          download.setAttribute("type", "mp4");
           download.src =
-            "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1920_18MG.mp4";
+            "https://st9.allmovies.uz/t/e/1/e1hw7vx4sa3qheqg22kvhae3.mp4";
           // parseInt(Math.random() * 10000);
           //   image.src = "./test.gif?" + parseInt(Math.random() * 10000);
           let startTime = Date.now();
-
+          download + parseInt(Math.random() * 10000);
           download.onloadeddata = function () {
             let endTime = Date.now();
             resolve(endTime - startTime);
@@ -148,13 +139,11 @@
       }
 
       checkBtn.addEventListener("click", async function () {
-        // setTimeout(stop, 10000);
+        setTimeout(stop, 10000);
         try {
           for (let i = 0; i < TEST_COUNT; i++) {
             let speed = await getLoadSpeed();
             test_results.push(speed);
-            // progress.style.width = ((i + 1) / TEST_COUNT) * 100 + "%";
-
             speedText.innerText = getAvgSpeed().toFixed(2) + "Mb";
           }
 
@@ -164,7 +153,7 @@
           console.log(e);
           document.querySelector(".ring").style.display = "none";
           speedText.style.transform = "scale(2)";
-          alert("Error");
+          // alert("Error");
         }
       });
 
@@ -181,14 +170,14 @@
       //   }, 3000);
       // });
 
-      // function stop() {
-      //   console.log(download);
-      //   // let tmp = download.get(0);
-      //   download.pause();
-      //   download.src = "";
-      //   download.load();
-      //   download.remove();
-      // }
+      function stop() {
+        console.log(download);
+        // let tmp = download.get(0);
+        download.pause();
+        download.src = "";
+        download.load();
+        download.remove();
+      }
 
       // document.getElementById("stopBtn").addEventListener("click", stop);
     </script>

@@ -1,6 +1,4 @@
 body {
-  /* background-color: #000; */
-
   background: url(./spiderManBckgr.jpg);
   background-size: cover;
   background-position: center;
@@ -9,15 +7,13 @@ body {
   height: 100vh;
 }
 #wrapper {
-  /* background: rgba(0, 0, 0, 0.08); */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* flex-direction: column; */
-  /* justify-content: space-evenly; */
   justify-content: center;
   height: 100vh;
 }
+
 #alertBox {
   opacity: 0;
   font-size: 1.125rem;
@@ -37,13 +33,12 @@ body {
   padding: 0 15px;
 }
 #mainDiv {
-  /* margin-top: 100px; */
   background: rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(1.5rem);
   -webkit-backdrop-filter: blur(1.5rem);
   color: #fff;
   width: 600px;
-  /* box-shadow: 0px 0px 7px 7px rgba(255, 255, 255, 0.027); */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,8 +49,6 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* background-image: url(./spidersWithOpacity.jpg); */
-
   background-size: cover;
   padding: 70px;
   min-height: 200px;
@@ -85,18 +78,6 @@ body {
   cursor: pointer;
   margin-bottom: 0;
 }
-/* #stopBtn {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: rgb(255, 153, 0);
-  margin: 0 auto;
-  text-shadow: 0 0 10px rgb(255, 153, 0);
-  cursor: pointer;
-  margin-bottom: 0;
-  width: 100px;
-} */
 
 .list {
   display: flex;
@@ -228,17 +209,24 @@ body {
 
 @media (max-width: 420px) {
   .ring {
-    top: 20%;
+    top: 16%;
+  }
+  html {
   }
   body {
-    /* -webkit-backdrop-filter: blur(1.5rem);
-    backdrop-filter: blur(1.5rem); */
-    background: #000;
+    /* background: #000; */
+    background-size: cover;
+    height: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
     height: unset;
   }
   #wrapper {
-    height: unset;
-    background: unset;
+    height: 100%;
+    min-height: 100%;
+
+    backdrop-filter: blur(1.5rem);
+    -webkit-backdrop-filter: blur(1.5rem);
   }
   #mainDiv {
     margin-top: 0;
@@ -248,7 +236,9 @@ body {
     background: unset;
   }
   #upperDiv {
-    min-height: 180px;
+    min-height: 220px;
+    padding: 40px;
+    padding-bottom: 15px;
   }
   #checkBtn {
     font-size: 1.104rem;
