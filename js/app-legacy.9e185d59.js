@@ -136,7 +136,7 @@
                 n("img", {
                   attrs: {
                     id: "logoImg",
-                    src: "/public/allplayLogoWhite.png",
+                    src: "allplayLogoWhite.png",
                     alt: "",
                   },
                 }),
